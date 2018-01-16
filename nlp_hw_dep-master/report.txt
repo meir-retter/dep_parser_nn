@@ -1,0 +1,34 @@
+Meir Retter
+smr2215
+NLP HW4
+
+Part 1: (dims=200, on dev data)
+
+Unlabeled attachment score 83.18
+Labeled attachment score 79.72
+
+
+Part 2: (dims=400, on dev data)
+
+Unlabeled attachment score 83.98
+Labeled attachment score 80.84
+
+There is an improvement because with the increased number of hidden dimension comes more neurons/more complexity of the allowed model.
+
+Part 3:
+minibatch size=2000, dims=200
+
+Unlabeled attachment score 82.84
+Labeled attachment score 79.59
+
+
+epochs=10, dims=200
+Unlabeled attachment score 82.62
+Labeled attachment score 79.29
+
+epochs=8, dims=400
+
+Unlabeled attachment score 83.6
+Labeled attachment score 80.52
+
+We can see that compared to the original dim=200 case, doubling the minibatch size decreases unlabeled attachment and labeled attachment accuracies by roughly a half percentage point. Increasing the number of epochs from 7 to 10 while the dims are 200 not only worsens the accuracies (possibly because of overfitting), but it does so even more than the minibatch change did. I then tested another configuration: dims=400 and epochs=8. My thought was that with these higher hidden dimensions, the number of epochs can be raised. This turned out to work, and by making these changes, both the unlabeled and labeled attachment accuracies improved. Therefore I've included 
